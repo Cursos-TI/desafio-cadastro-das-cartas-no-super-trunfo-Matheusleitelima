@@ -45,7 +45,7 @@ int main() {
 
     pibpercapita1 = (float)(pib1 / populacao1);
     densidadepopulacional1 = (float)(populacao1 / area1);
-    float densidadeinvertida1 = 1 /densidadeinvertida1; //dividir a 1 pela densidade
+    float densidadeinvertida1 = 1 / densidadepopulacional1; //dividir a 1 pela densidade
     float superpoder1 = (float)(populacao1 + area1 + pib1 + nturisticos1 + pibpercapita1 + densidadeinvertida1);
 
 
@@ -77,7 +77,7 @@ int main() {
 
     pibpercapita2 = (float)(pib2 / populacao2);
     densidadepopulacional2 = (float)(populacao2 / area2);
-    float densidadeinvertida2 = 1/densidadeinvertida2;
+    float densidadeinvertida2 = 1 / densidadepopulacional2;
     float superpoder2 = (float) (populacao2 + area2 + pib2 + nturisticos2 + pibpercapita2 + densidadeinvertida2);
 
 
@@ -109,20 +109,56 @@ int main() {
 
 
 
-    int resultadoPopulacao = populacao1 > populacao2;
-    int resultadoArea = area1 > area2;
-    int resultadoPib = pib1 > pib2;
-    int resultadoPontosTuristicos = nturisticos1 > nturisticos2;
-    int resultadoSuperpoder = superpoder1 > superpoder2;
+    int opcmenu;
 
-    printf("Resultado da competição \n");
-    printf("Carta 1 = (1) e Carta 2 = (0) \n ");
+    printf("Comaprações \n");
+    printf("1 - População \n");
+    printf("2 - Aréa \n");
+    printf("3 - Densidade Populacional \n");
+    printf("4 - Pib Per capita \n");
+    printf("Escolha quais atributos deseja comparar: \n");
+    scanf("%d", &opcmenu);
+    // Comparações
 
-    printf("População: Carta %d venceu\n", resultadoPopulacao ? 1 : 2);
-    printf("Área: Carta %d venceu\n", resultadoArea ? 1 : 2);
-    printf("PIB: Carta %d venceu\n", resultadoPib ? 1 : 2);
-    printf("Pontos turísticos: Carta %d venceu\n", resultadoPontosTuristicos ? 1 : 2);
-    printf("Superpoder: Carta %d venceu\n", resultadoSuperpoder ? 1 : 2);
+    if (opcmenu == 1){
+            printf("Atributo: População \n");
+        if (populacao1 > populacao2){
+            printf("Carta 1 ganhou com %lu", populacao1);
+        }else{
+            printf("Carta 2 ganhou com %lu", populacao2);
+        }
+    }
+
+
+    if (opcmenu == 2){
+            printf("Atributo: Area \n");
+        if (area1 > area2){
+            printf("Carta 1 ganhou com %f", area1);
+        }else{
+            printf("Carta 2 ganhou com %f", area2);
+        }
+    }
+
+
+    if (opcmenu == 3){
+            printf("Atributo: Densidade populacional \n");
+        if (densidadeinvertida1 < densidadeinvertida2){
+            printf("Carta 1 ganhou com %f", densidadeinvertida1);
+        }else{
+            printf("Carta 2 ganhou com %f", densidadeinvertida2);
+        }
+    }
+
+     if (opcmenu == 4){
+            printf("Atributo: Pib per capita \n");
+        if (pibpercapita1 > pibpercapita2){
+            printf("Carta 1 ganhou com %f", pibpercapita1);
+        }else{
+            printf("Carta 2 ganhou com %f", pibpercapita2);
+        }
+    }
+
+
 
     return 0;
 }
