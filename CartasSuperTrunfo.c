@@ -120,45 +120,67 @@ int main() {
     scanf("%d", &opcmenu);
     // Comparações
 
-    if (opcmenu == 1){
-            printf("Atributo: População \n");
-        if (populacao1 > populacao2){
-            printf("Carta 1 ganhou com %lu", populacao1);
+
+    //Inicio do switch
+    switch (opcmenu){
+
+    case 1:
+        printf("Cidade: %c x %c",nomecidade1, nomecidade2);
+        printf("Atributo escolhido: População \n");
+
+        if(populacao1 > populacao2){
+            printf("Carta 1 venceu: %lu // Carta 2 perdeu: %lu", populacao1, populacao2);
+        }else if(populacao2 > populacao1){
+            printf("Carta 2 venceu:%lu // Carta 1 perdeu:%lu", populacao2, populacao1);
         }else{
-            printf("Carta 2 ganhou com %lu", populacao2);
+            printf("Empate: Carta 1:%lu // Carta 2: %lu", populacao1, populacao2);
         }
-    }
+        break;
 
+    case 2:
+        printf("Cidade: %c x %c", nomecidade1, nomecidade2);
+        printf("Atributo escolhido: Area \n");
 
-    if (opcmenu == 2){
-            printf("Atributo: Area \n");
-        if (area1 > area2){
-            printf("Carta 1 ganhou com %f", area1);
+        if(area1 > area2){
+            printf("Carta 1 venceu: %f // Carta 2 perdeu: %f", area1, area2);
+        }else if(area2 > area1){
+            printf("Carta 2 venceu:%f // Carta 1 perdeu:%f ", area2, area1);
         }else{
-            printf("Carta 2 ganhou com %f", area2);
+            printf("Empate: Carta 1:%f // Carta 2: %f", area1, area2);
         }
-    }
+        break;
 
+    case 3:
+        printf("Cidade: %c x %c", nomecidade1, nomecidade2);
+        printf("Atributo escolhido: Densidade Populacional \n");
 
-    if (opcmenu == 3){
-            printf("Atributo: Densidade populacional \n");
-        if (densidadeinvertida1 < densidadeinvertida2){
-            printf("Carta 1 ganhou com %f", densidadeinvertida1);
+        if(area1 < area2){
+            printf("Carta 1 venceu: %f // Carta 2 perdeu: %f", densidadeinvertida1, densidadeinvertida2);
+        }else if(area2 < area1){
+            printf("Carta 2 venceu:%f // Carta 1 perdeu:%f ", densidadeinvertida2, densidadeinvertida1);
         }else{
-            printf("Carta 2 ganhou com %f", densidadeinvertida2);
+            printf("Empate: Carta 1:%f // Carta 2: %f", densidadeinvertida1, densidadeinvertida2);
         }
-    }
+        break;
 
-     if (opcmenu == 4){
-            printf("Atributo: Pib per capita \n");
-        if (pibpercapita1 > pibpercapita2){
-            printf("Carta 1 ganhou com %f", pibpercapita1);
+    case 4:
+         printf("Cidade: %c x %c", nomecidade1, nomecidade2);
+        printf("Atributo escolhido: Pib per capita \n");
+
+        if(pibpercapita1 > pibpercapita2){
+            printf("Carta 1 venceu: %f // Carta 2 perdeu: %f", pibpercapita1, pibpercapita2);
+        }else if(pibpercapita2 > pibpercapita1){
+            printf("Carta 2 venceu:%f // Carta 1 perdeu:%f ", pibpercapita2, pibpercapita1);
         }else{
-            printf("Carta 2 ganhou com %f", pibpercapita2);
+            printf("Empate: Carta 1:%f // Carta 2: %f", pibpercapita1, pibpercapita2);
         }
+        break;
+
+    default:
+        printf("Nenhuma da opções escolhidas \n");
+
+
     }
-
-
 
     return 0;
 }
